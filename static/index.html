@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" lang="en" data-bs-theme="dark">
+<html lang="en">
 
 <head>
   <title>G4F UI</title>
@@ -14,8 +14,8 @@
   <script>
     window.ZeroMdConfig = {
       cssUrls: [
-        'https://cdn.jsdelivr.net/gh/hyrious/github-markdown-css@main/dist/dark.css',
-        'https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism-lucario.css',
+        'https://cdn.jsdelivr.net/gh/hyrious/github-markdown-css@main/dist/github-markdown.css', // Changed to light theme
+        'https://raw.githubusercontent.com/PrismJS/prism-themes/master/themes/prism.css', // Changed to light theme
       ]
     }
   </script>
@@ -26,16 +26,15 @@
 </head>
 
 <body>
-  <div class="container-lg mt-1">
+  <div class="container-lg mt-3">
     <div class="card">
       <div class="card-header">
-        <h1> G4F UI </h1>
+        <h1>G4F UI</h1>
         <p>Simple UI for testing the API</p>
       </div>
       <div class="card-body">
-        <div id="chat" class="container-md p-5">
-          <div id="messages" class="column">
-          </div>
+        <div id="chat" class="container-md p-4">
+          <div id="messages" class="column"></div>
           <div id="spinner">
             <img id="loading" class="htmx-indicator" src="/static/spinner.svg">
           </div>
@@ -53,19 +52,18 @@
 
             <div class="container">
               <div class="row">
-                <div class="col-7">
+                <div class="col-8">
                   <textarea name="message" placeholder="Enter your message" id="input" autofocus autocomplete="off"
                     class="form-control"></textarea>
                 </div>
                 <button type="submit" id="btnSubmit" class="m-1 btn btn-primary col-2">Send</button>
 
                 <div class="dropdowns col align-self-end text-end">
-                  <div class="row justify-content-start"
-                    title="Automatically pick the best model and providers available">
+                  <div class="row justify-content-start">
                     <label for="nofail" class="form-label col align-self-end">Automatic:</label>
                     <input type="checkbox" id="nofail" name="nofail" class="form-check-input" checked>
                   </div>
-                  <div class="row justify-content-end" title="Select the model to use">
+                  <div class="row justify-content-end">
                     <label for="model" class="form-label text-right col align-self-end">Model:</label>
                     <select name="model" id="model" class="col align-self-end form-select" disabled>
                       {% for model in all_models %}
@@ -73,8 +71,8 @@
                       {% endfor %}
                     </select>
                   </div>
-                  <div class="row justify-content-end" title="Select the provider to use">
-                    <label for="provider" class="form-label col align-self-end ">Provider:</label>
+                  <div class="row justify-content-end">
+                    <label for="provider" class="form-label col align-self-end">Provider:</label>
                     <select name="provider" id="provider" class="col align-self-end form-select" disabled>
                       {% for provider in all_providers %}
                       <option value="{{ provider }}">{{ provider }}</option>
@@ -91,7 +89,6 @@
   </div>
 
   <script src="/static/script.js"></script>
-
 </body>
 
 </html>
