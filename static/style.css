@@ -1,6 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   padding: 0;
+  background-color: #f8f9fa; /* Light background color */
+  color: #212529; /* Dark text color */
 }
 
 .htmx-indicator {
@@ -11,20 +13,21 @@ body {
   display: inline;
 }
 
-.htmx-request.htmx-indicator {
-  display: inline;
-}
-
 .hidden {
   display: none;
 }
 
 #input {
-  border-radius: 10px;
+  border-radius: 5px; /* Slightly less rounded */
   resize: none;
   box-sizing: border-box;
   height: 100%;
   overflow-y: hidden;
+}
+
+.card {
+  background-color: #ffffff; /* White background for card */
+  border: 1px solid #ced4da; /* Light border */
 }
 
 .card-body {
@@ -57,5 +60,15 @@ body {
 }
 
 #loading {
-  fill: #e0e0e0;
+  fill: #6c757d; /* Darker fill for loading indicator */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Primary button color */
+  border-color: #007bff; /* Border color */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  border-color: #0056b3; /* Darker border on hover */
 }
